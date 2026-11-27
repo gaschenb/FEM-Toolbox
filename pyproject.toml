@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "femtoolbox"
+version = "2.1.0"
+description = "2D finite-element toolbox: high-order CG / hp-DG, curved elements, a-posteriori hp-adaptivity, elasticity, transient and eigen solvers, with a PyQt GUI."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "matplotlib>=3.7", "pyamg>=5.0"]
+
+[project.urls]
+Homepage = "https://github.com/gaschenb/FEM-Toolbox"
+Repository = "https://github.com/gaschenb/FEM-Toolbox"
+
+[project.optional-dependencies]
+gui = ["PyQt5>=5.15"]
+
+[project.scripts]
+fem-toolbox = "femtoolbox.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["femtoolbox*"]
